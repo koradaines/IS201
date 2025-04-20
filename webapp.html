@@ -1,0 +1,81 @@
+<!-- Notes
+    - include html, java script and css on one page
+    - re run port
+     -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Random Fact Generator</title>
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background:rgb(191, 211, 255);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 400px;
+    }
+
+    #fact {
+      margin-bottom: 20px;
+      font-size: 1.2rem;
+      color: #333;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div id="fact">Click the button to see a random fact!</div>
+    <button onclick="showRandomFact()">Show Random Fact</button>
+  </div>
+
+  <script>
+    const facts = [
+      "Bananas are berries, but strawberries aren’t.",
+      "Honey never spoils — archaeologists found 3,000-year-old honey in tombs!",
+      "A group of flamingos is called a 'flamboyance'.",
+      "Octopuses have three hearts.",
+      "Wombat poop is cube-shaped.",
+      "Sharks existed before trees.",
+      "Your nose can remember 50,000 different scents.",
+      "Sloths can hold their breath longer than dolphins."
+    ];
+
+    function showRandomFact() {
+      const randomIndex = Math.floor(Math.random() * facts.length);
+      document.getElementById("fact").textContent = facts[randomIndex];
+    }
+  </script>
+
+<a href="scratch.html" style="position: absolute; bottom:10px; left: 50%; transform: translateX(-50%);">Back to Scratch Page</a>
+
+</body>
+</html>
